@@ -92,66 +92,6 @@ class MeldAudioPreprocess():
     def preprocess(self):
         self.__extractFromVideo()
 
-# def printZeroFiles():
-#     splits = ['..\MELDAudioPreprocessed\meldaudiodata_dev.pickle',
-#             '..\MELDAudioPreprocessed\meldaudiodata_test.pickle',
-#             '..\MELDAudioPreprocessed\meldaudiodata_train.pickle']
-
-#     for split in splits:
-#         data = {}
-#         with open(split, 'rb') as handle:
-#             data = pickle.load(handle)
-
-#         for key, value in data.items():
-#             if len(value) == 1:
-#                 print(f"split {split} - zero file {key}")
-
 if __name__ == "__main__":
     meld_preprocess = MeldAudioPreprocess("..\MELD.Raw.tar", "..\MELDAudioPreprocessed")
     meld_preprocess.preprocess()
-
-    # data = {}
-    # with open('..\MELDAudioPreprocessed\meldaudiodata_test.pickle', 'rb') as handle:
-    #     data = pickle.load(handle)
-    #print(data)
-
-    # data_corrected = {}
-
-    # for key, value in data.items():
-    #     if "final_videos_test" in key:
-    #         new_key = key.replace("final_videos_test", "")
-    #         data_corrected[new_key] = value
-    #     else:
-    #         data_corrected[key] = value
-
-    # out_pickle_file = os.path.join("..\MELDAudioPreprocessed", f'meldaudiodata_test_corrected.pickle')
-
-    # with open(out_pickle_file, 'wb') as handle:
-    #     pickle.dump(data_corrected, handle, protocol=pickle.HIGHEST_PROTOCOL)
-    #     print("Saved data at " + out_pickle_file)
-
-    # min_value = 0.0
-    # for key, value in data.items():
-    #     value = torch.min(value)
-
-    #     if value < min_value:    
-
-    #         if not torch.isinf(value):
-    #             min_value = value
-
-    # print(min_value)
-
-    # printZeroFiles()
-    # split ..\MELDAudioPreprocessed\meldaudiodata_dev.pickle - zero file dia108_utt5.mp4
-    # split ..\MELDAudioPreprocessed\meldaudiodata_dev.pickle - zero file dia99_utt3.mp4
-    # split ..\MELDAudioPreprocessed\meldaudiodata_train.pickle - zero file dia179_utt8.mp4
-    # split ..\MELDAudioPreprocessed\meldaudiodata_train.pickle - zero file dia312_utt9.mp4 
-    # split ..\MELDAudioPreprocessed\meldaudiodata_train.pickle - zero file dia332_utt1.mp4 
-    # split ..\MELDAudioPreprocessed\meldaudiodata_train.pickle - zero file dia406_utt2.mp4 
-    # split ..\MELDAudioPreprocessed\meldaudiodata_train.pickle - zero file dia523_utt10.mp4
-    # split ..\MELDAudioPreprocessed\meldaudiodata_train.pickle - zero file dia71_utt0.mp4
-
-# FIX TODOS
-# 1. final_videos_test OK
-# 2. short audios (6 + 2) OK
-# 3. -inf OK
